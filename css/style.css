@@ -5,7 +5,9 @@
   box-sizing: border-box;
   user-select: none;
   font-family: "Poppins", sans-serif;
-  outline: none;
+}
+*:focus{
+  outline: none !important;
 }
 html,
 body {
