@@ -1,10 +1,19 @@
-let cells = document.querySelectorAll('.cell');
-let turn = 'X';
-cells.forEach(cell => {
-  cell.addEventListener('click', () => {
-    cell.classList.add('blocked');
+let cells = document.querySelectorAll(".cell");
+let turn = "X";
+let btnRestart = document.querySelector(".restart");
+
+cells.forEach((cell) => {
+  cell.addEventListener("click", () => {
+    cell.classList.add("blocked");
     cell.innerHTML = turn;
-    cell.style.backgroundColor = "#475569";
-    turn = turn == 'X' ? 'O' : 'X';
+    turn = turn == "X" ? "O" : "X";
+  });
+});
+
+btnRestart.addEventListener("click", () => {
+  cells.forEach((cell) => {
+    cell.classList.remove("blocked");
+    cell.innerHTML = "";
+    turn = "X";
   });
 });

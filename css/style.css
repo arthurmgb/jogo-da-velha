@@ -1,69 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    user-select: none;
-    font-family: 'Poppins', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: "Poppins", sans-serif;
 }
-html, body{
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
-body{
-    background-color: #0f172a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    gap: 30px;
+body {
+  background-color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 30px;
 }
-.board{
-    width: 400px;
-    height: 400px;
-    display: flex;
-    flex-wrap: wrap;
+.board {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
 }
-.cell{
-    width: 33.3%;
-    height: 33.3%;
-    background-color: #64748b;
-    border: 4px solid #0f172a;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 80px;
-    color: #f8fafc;
+.cell {
+  width: 33.3%;
+  height: 33.3%;
+  background-color: #64748b;
+  border: 4px solid #0f172a;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  color: #f8fafc;
 }
-.cell:hover{
-    cursor: pointer;
-    background-color: #94a3b8;
+.cell:hover {
+  cursor: pointer;
+  background-color: #94a3b8;
 }
-.cell.blocked{
-    pointer-events: none;
+.cell.blocked {
+  pointer-events: none;
+  background-color: #475569;
 }
-.restart{
-    padding: 16px 64px;
-    font-size: 22px;
-    color: #0f172a;
-    border: none;
-    background-color: #f1f5f9;
-    border-radius: 12px;
-    cursor: pointer;
+.restart {
+  padding: 16px 64px;
+  font-size: 22px;
+  color: #0f172a;
+  border: none;
+  background-color: #f1f5f9;
+  border-radius: 12px;
+  cursor: pointer;
 }
-.restart:hover{
-    background-color: #cbd5e1;
-    color: #0f172a;
+.restart:hover {
+  background-color: #cbd5e1;
+  color: #0f172a;
 }
 @media only screen and (max-width: 600px) {
-    .board {
-        width: 300px;
-        height: 300px;
-    }
+  .board {
+    width: 300px;
+    height: 300px;
+  }
 }
 @media only screen and (max-width: 300px) {
-    .board {
-        width: 100%;
-    }
+  .board {
+    width: 100%;
+  }
 }
