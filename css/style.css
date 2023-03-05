@@ -5,9 +5,7 @@
   box-sizing: border-box;
   user-select: none;
   font-family: "Poppins", sans-serif;
-}
-*:focus{
-  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
 }
 html,
 body {
