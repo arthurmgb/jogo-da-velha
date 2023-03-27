@@ -27,7 +27,7 @@ const winPossibilities = [
 
 const endGame = () => {
   cells.forEach((cell) => {
-    game_win.volume = 0.2;
+    game_win.volume = 0.3;
     game_win.currentTime = 0;
     game_win.play();
     cell.classList.add("lock");
@@ -69,7 +69,7 @@ const checkWin = (e, draw) => {
   });
 
   if (draw) {
-    game_over.volume = 0.3;
+    game_over.volume = 0.6;
     game_over.currentTime = 0;
     game_over.play();
     winMsg.style.opacity = "1";
