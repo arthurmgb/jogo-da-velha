@@ -70,6 +70,10 @@ h1{
   background-color: #cbd5e1;
   color: #0f172a;
 }
+.restart:disabled{
+  pointer-events: none;
+  opacity: 0.6;
+}
 @media only screen and (max-width: 600px) {
   .board {
     width: 300px;

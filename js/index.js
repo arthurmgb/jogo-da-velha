@@ -5,6 +5,9 @@ let playerX = [];
 let playerO = [];
 let draw = true;
 let winMsg = document.querySelector("h1");
+const tap = new Audio("src/tap.wav");
+const game_over = new Audio("src/go.mp3");
+const game_win = new Audio("src/win.mp3");
 
 const winPossibilities = [
   // linhas
@@ -24,6 +27,9 @@ const winPossibilities = [
 
 const endGame = () => {
   cells.forEach((cell) => {
+    game_win.volume = 0.2;
+    game_win.currentTime = 0;
+    game_win.play();
     cell.classList.add("lock");
   });
 };
@@ -63,6 +69,9 @@ const checkWin = (e, draw) => {
   });
 
   if (draw) {
+    game_over.volume = 0.3;
+    game_over.currentTime = 0;
+    game_over.play();
     winMsg.style.opacity = "1";
     winMsg.innerText = "Deu velha!";
     return;
@@ -71,6 +80,11 @@ const checkWin = (e, draw) => {
 
 cells.forEach((cell) => {
   cell.addEventListener("click", (e) => {
+    if (btnRestart.disabled) {
+      btnRestart.disabled = false;
+    }
+    tap.currentTime = 0;
+    tap.play();
     cell.classList.add("blocked");
     cell.innerHTML = turn;
     checkWin(e, draw);
@@ -79,6 +93,8 @@ cells.forEach((cell) => {
 });
 
 btnRestart.addEventListener("click", () => {
+  tap.currentTime = 0;
+  tap.play();
   cells.forEach((cell) => {
     cell.classList.remove("blocked", "lock");
     cell.innerHTML = "";
@@ -87,4 +103,5 @@ btnRestart.addEventListener("click", () => {
   playerX = [];
   playerO = [];
   winMsg.style.opacity = "0";
+  btnRestart.disabled = true;
 });
