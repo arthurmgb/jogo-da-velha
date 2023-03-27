@@ -39,6 +39,7 @@ const checkWin = (e, draw) => {
       winMsg.style.opacity = "1";
       winMsg.innerText = "O jogador X ganhou!";
       endGame();
+      return;
     }
   } else if (turn == "O") {
     playerO.push(parseInt(e.target.dataset.i));
@@ -50,6 +51,7 @@ const checkWin = (e, draw) => {
       winMsg.style.opacity = "1";
       winMsg.innerText = "O jogador O ganhou!";
       endGame();
+      return;
     }
   }
 
