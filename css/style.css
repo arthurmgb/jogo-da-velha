@@ -20,6 +20,13 @@ body {
   padding: 20px;
   gap: 30px;
 }
+h1{
+  color: #f8fafc;
+  font-size: 24px;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.4s;
+}
 .board {
   width: 400px;
   height: 400px;
@@ -43,6 +50,10 @@ body {
   background-color: #94a3b8;
 }
 .cell.blocked {
+  pointer-events: none;
+  background-color: #475569;
+}
+.cell.lock {
   pointer-events: none;
   background-color: #475569;
 }
