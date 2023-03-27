@@ -69,7 +69,7 @@ const checkWin = (e, draw) => {
   });
 
   if (draw) {
-    game_over.volume = 0.6;
+    game_over.volume = 1;
     game_over.currentTime = 0;
     game_over.play();
     winMsg.style.opacity = "1";
