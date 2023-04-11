@@ -69,14 +69,14 @@ const checkWin = (e, draw) => {
       winMsg.innerText = "O jogador O ganhou!";
 
       const winningPossibility = winPossibilities.find((possibility) =>
-      possibility.every((number) => playerO.includes(number))
-    );
+        possibility.every((number) => playerO.includes(number))
+      );
 
-    const winningCells = winningPossibility.map((number) =>
-      document.querySelector(`[data-i="${number}"]`)
-    );
+      const winningCells = winningPossibility.map((number) =>
+        document.querySelector(`[data-i="${number}"]`)
+      );
 
-    winningCells.forEach((cell) => cell.classList.add("winning-cell"));
+      winningCells.forEach((cell) => cell.classList.add("winning-cell"));
 
       endGame();
       return;
@@ -91,6 +91,9 @@ const checkWin = (e, draw) => {
   });
 
   if (draw) {
+    cells.forEach((cell) => {
+      cell.classList.add("draw-cell");
+    });
     game_over.volume = 1;
     game_over.currentTime = 0;
     game_over.play();
@@ -118,7 +121,7 @@ btnRestart.addEventListener("click", () => {
   tap.currentTime = 0;
   tap.play();
   cells.forEach((cell) => {
-    cell.classList.remove("blocked", "lock", "winning-cell");
+    cell.classList.remove("blocked", "lock", "winning-cell", "draw-cell");
     cell.innerHTML = "";
   });
   turn = "X";
