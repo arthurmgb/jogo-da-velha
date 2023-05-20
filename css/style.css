@@ -10,6 +10,7 @@
 html,
 body {
   height: 100%;
+  overscroll-behavior-y: contain;
 }
 body {
   background-color: #0f172a;
@@ -20,7 +21,7 @@ body {
   padding: 20px;
   gap: 30px;
 }
-h1{
+h1 {
   color: #f8fafc;
   font-size: 24px;
   text-align: center;
@@ -78,7 +79,7 @@ h1{
   background-color: #cbd5e1;
   color: #0f172a;
 }
-.restart:disabled{
+.restart:disabled {
   pointer-events: none;
   opacity: 0.6;
   background-color: #f1f5f9 !important;
